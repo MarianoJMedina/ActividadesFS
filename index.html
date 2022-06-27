@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>API Dolar</title>
+  </head>
+  <body>
+    <h1>Dolar Hoy</h1>
+    <button onclick="obtener()">Click Aquí</button>
+    <script>
+      function obtener() {
+        fetch("https://www.dolarsi.com/api/api.php?type=valoresprincipales")
+          .then((res) => res.json())
+          .then((data) => {
+            let valorCompra = data[0].casa.compra;
+            let valorVenta = data[0].casa.venta;
+            document.write('Compra: ',valorCompra);
+            document.write('<br>');
+            document.write('Venta: ',valorVenta)
+          });
+      }
+    </script>
+  </body>
+</html>
