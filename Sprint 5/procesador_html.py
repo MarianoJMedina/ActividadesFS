@@ -1,5 +1,3 @@
-
-#from cgitb import html
 from clases.cliente.cliente import Cliente
 from clases.cliente.direccion import Direccion
 
@@ -50,27 +48,10 @@ class ProcesadorHtml:
             numero = cliente.numero,
             nombre = cliente.nombre,
             apellido = cliente.apellido,
-            dni = 
+            dni = cliente.dni,
+            transacciones = transacciones
         )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-archivo = open("index.html")
+archivo = open("index.html","w")
 archivo.write(html)
 archivo.close()
