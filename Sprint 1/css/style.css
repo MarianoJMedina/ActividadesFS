@@ -1,0 +1,428 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+:root {
+  --azul: #287bff;
+  --blanco: #fff;
+  --gris: #f5f5f5;
+  --negro1: #222;
+  --negro2: #999;
+  --naranja: #ff8000;
+}
+
+body {
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+}
+
+.contenedor {
+  position: relative;
+  width: 100%;
+}
+
+/*Menú Lateral*/
+
+.navegacion {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: var(--azul);
+  border-left: 10px solid var(--azul);
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.navegacion ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navegacion ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.navegacion ul li:hover {
+  background: var(--blanco);
+}
+
+.navegacion ul li:nth-child(1) {
+  font-size: 1.75em;
+  margin-bottom: 40px !important;
+  pointer-events: none;
+}
+
+.navegacion ul li:nth-child(1) #dot {
+  color: var(--naranja);
+}
+
+.navegacion ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--blanco);
+}
+
+.navegacion ul li:hover a {
+  color: var(--azul);
+}
+
+.navegacion ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+}
+
+.navegacion ul li a .icon ion-icon {
+  font-size: 1.75em;
+}
+
+.navegacion ul li a .title {
+  position: relative !important;
+  display: block !important;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap !important;
+}
+
+.navegacion ul li:hover a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--blanco);
+  pointer-events: none;
+}
+
+.navegacion ul li:hover a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--blanco);
+  pointer-events: none;
+}
+
+/*Contenido Principal*/
+.main {
+  position: absolute !important;
+  width: calc(100% - 300px) !important;
+  left: 300px !important;
+  min-height: 100vh !important;
+  background: var(--blanco) !important;
+  transition: 0.5s !important;
+}
+
+.topbar {
+  width: 100% !important;
+  height: 60px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0 10px !important;
+}
+
+.toggle {
+  position: relative !important;
+  width: 60px !important;
+  height: 60px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-size: 2.5em !important;
+  cursor: pointer !important;
+}
+
+.search {
+  position: relative !important;
+  width: 400px !important;
+  margin: 0 10px !important;
+}
+
+.search label {
+  position: relative !important;
+  width: 100% !important;
+}
+
+.search label input {
+  width: 100% !important;
+  height: 40px !important;
+  border-radius: 40px !important;
+  padding: 5px 20px !important;
+  padding-left: 35px !important;
+  font-size: 15px !important;
+  outline: none !important;
+  border: 1px solid var(--negro2) !important;
+}
+
+.search label ion-icon {
+  position: absolute !important;
+  top: 11.5px !important;
+  left: 10px !important ;
+  font-size: 1em !important;
+}
+
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardBox {
+  position: relative !important;
+  width: 100% imprt !important;
+  padding: 20px !important;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+
+.cardBox-2 {
+  position: relative;
+  width: 100%;
+  padding: 20px !important;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+.cardBox .carta {
+  position: relative;
+  background: var(--blanco);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cardBox-2 .carta {
+  position: relative;
+  background: var(--azul);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cardBox .carta .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 1.3em;
+  color: var(--blue);
+}
+
+.cardBox .carta .cardName {
+  color: var(--negro2);
+  font-size: 1em;
+  margin-top: 5px;
+}
+
+.cardBox-2 .carta .cardName {
+  color: var(--blanco);
+  font-size: 1.2em;
+  margin-top: 5px;
+  padding: 30px !important;
+}
+
+.cardBox-2 .carta:hover {
+  background: var(--blanco);
+  transition: 0.2s;
+}
+
+.cardBox-2 .carta:hover .cardName {
+  color: var(--naranja);
+}
+
+.title {
+  position: relative !important;
+  width: 100% imprt !important;
+  padding: 0px 20px !important;
+}
+
+.title .titleName {
+  font-size: 2.5em;
+  color: var(--negro2);
+  opacity: 0.7;
+}
+
+/*Detalles*/
+
+.detalles {
+  position: relative !important;
+  width: 100% !important;
+  padding: 20px !important;
+  display: grid !important;
+  grid-template-columns: 3fr !important;
+  grid-gap: 30px;
+}
+
+.detalles .cuentas {
+  position: relative !important;
+  display: grid;
+  min-height: 200px !important;
+  background: var(--blanco);
+  padding: 20px !important;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cardHeader h5 {
+  font-weight: 600;
+  color: var(--azul);
+}
+
+.detalles table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin-top: 10px !important;
+}
+
+.detalles table thead td {
+  font-weight: 600;
+  font-size: 0.75em;
+}
+
+.detalles .cuentas table tr {
+  color: var(--negro1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.detalles .cuentas table tr:last-child {
+  border-bottom: none;
+}
+
+.detalles .cuentas table tr td {
+  padding: 10px !important;
+}
+
+.detalles .cuentas table tr td:last-child {
+  cursor: pointer;
+}
+
+.opt {
+  color: var(--naranja);
+  cursor: pointer;
+}
+
+.credit-card {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.credit-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+/*Vencimientos*/
+
+.cardBox-3 {
+  position: relative;
+  width: 100%;
+  padding: 10px !important;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+.cardBox-3 .carta {
+  position: relative;
+  background: var(--blanco);
+  padding: 15px !important;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  font-size: 0.7em;
+}
+
+.cardBox-3 .carta {
+  flex-direction: row-reverse;
+}
+
+.cardBox-3 .carta .contenido {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardBox-3 .carta .contenido .credit-card-fine {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-top: 5px !important;
+  margin-right: 15px !important;
+}
+
+.credit-card-fine img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.cardBox-3 .carta .contenido .fine {
+  margin-top: 5px !important;
+}
